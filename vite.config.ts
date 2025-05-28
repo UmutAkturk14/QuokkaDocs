@@ -23,4 +23,7 @@ export default defineConfig({
       "@helpers/*": path.resolve(__dirname, "src/helpers/*"),
     },
   },
+  server: {
+    port: 8080,
+  }
 });

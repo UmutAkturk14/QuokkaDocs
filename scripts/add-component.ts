@@ -82,37 +82,37 @@ function componentTemplate(name: string, mode: string) {
   if (mode === "excluded") {
     return `import React from "react";
 
-      const ${n} = () => {
-        return <div>${n}</div>;
-      };
+const ${n} = () => {
+  return <div>${n}</div>;
+};
 
-      export default ${n};
+export default ${n};
 `;
   }
 
   if (mode === "compact") {
     return `import React from "react";
 
-      export interface ${n}Props {}
+  export interface ${n}Props {}
 
-      const ${n}: React.FC<${n}Props> = () => {
-        return <div>${n}</div>;
-      };
+  const ${n}: React.FC<${n}Props> = () => {
+    return <div>${n}</div>;
+  };
 
-      export default ${n};
-      `;
+  export default ${n};
+  `;
   }
 
   // centralized
   return `import React from "react";
-    import type { ${n}Props } from "${TYPES_ALIAS}";
+import type { ${n}Props } from "${TYPES_ALIAS}";
 
-    const ${n}: React.FC<${n}Props> = () => {
-      return <div>${n}</div>;
-    };
+const ${n}: React.FC<${n}Props> = () => {
+  return <div>${n}</div>;
+};
 
-    export default ${n};
-    `;
+export default ${n};
+`;
 }
 
 function centralizedTypesPath(parent: string | undefined, comp: string) {
