@@ -24,6 +24,9 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.7",
+    "highlight.js": "^11.11.1",
+    "hljs": "^6.2.3",
+    "lucide-react": "^0.511.0",
     "prettier": "^3.5.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

@@ -19,7 +19,8 @@
       "@api/*": ["src/api/*"],
       "@store/*": ["src/store/*"],
       "@config/*": ["src/config/*"],
-      "@helpers/*": ["src/helpers/*"]
+      "@helpers/*": ["src/helpers/*"],
+      "@data/*": ["src/data/*"]
     }
   }
 }

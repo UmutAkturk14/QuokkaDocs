@@ -21,6 +21,7 @@ export default defineConfig({
       "@store/*": path.resolve(__dirname, "src/store/*"),
       "@config/*": path.resolve(__dirname, "src/config/*"),
       "@helpers/*": path.resolve(__dirname, "src/helpers/*"),
+      "@data/*": path.resolve(__dirname, "src/data/*"),
     },
   },
   server: {
