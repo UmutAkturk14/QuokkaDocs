@@ -52,7 +52,7 @@ const DocSidebar: React.FC<DocSidebarProps> = ({
         placeholder="Filter functions..."
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
-        className="mb-4 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+        className="mb-4 w-full rounded-md border border-stone-300 px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-none"
       />
 
       {/* Module list */}
