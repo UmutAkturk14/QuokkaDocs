@@ -12,10 +12,20 @@ export const Navbar: React.FC = () => {
       </div>
 
       <div className="flex items-center space-x-4">
-        <Button className="text-white hover:bg-white/20 font-semibold transition-colors">
+        <Button
+          href="https://github.com/UmutAkturk14/QuokkaDocs"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:bg-white/20 font-semibold transition-colors"
+        >
           GitHub
         </Button>
-        <Button className="text-white hover:bg-white/20 font-semibold transition-colors">
+        <Button
+          href="/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:bg-white/20 font-semibold transition-colors"
+        >
           NPM
         </Button>
       </div>
