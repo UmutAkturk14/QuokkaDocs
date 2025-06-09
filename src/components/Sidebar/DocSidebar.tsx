@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { ChevronDown, ChevronRight } from "lucide-react";
-import type { DocModule, DocFunction } from "../../data/documentation";
+import type { DocModule, DocFunction } from "../../types/documentation";
 
 interface DocSidebarProps {
   modules: DocModule[];
@@ -22,12 +22,21 @@ const DocSidebar: React.FC<DocSidebarProps> = ({
     const term = filter.toLowerCase();
     return modules
       .map((m) => {
+        // Get all functions for this module
         const allFuncs = functions.filter((f) => f.module === m.id);
-        if (!term) return { module: m, funcs: allFuncs };
+
+        // Sort them alphabetically by name
+        const sortedFuncs = allFuncs.sort((a, b) =>
+          a.name.localeCompare(b.name)
+        );
+
+        if (!term) return { module: m, funcs: sortedFuncs };
+
         const modMatch = m.name.toLowerCase().includes(term);
-        const funcMatches = allFuncs.filter((f) =>
+        const funcMatches = sortedFuncs.filter((f) =>
           f.name.toLowerCase().includes(term)
         );
+
         return modMatch || funcMatches.length
           ? { module: m, funcs: funcMatches }
           : null;
@@ -38,7 +47,11 @@ const DocSidebar: React.FC<DocSidebarProps> = ({
   const toggleModule = (id: string) =>
     setExpanded((prev) => {
       const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
       return next;
     });
 
