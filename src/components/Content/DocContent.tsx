@@ -50,7 +50,7 @@ const DocContent: React.FC<DocContentProps> = ({
 
       {/* example */}
       {example && (
-        <section className="space-y-2">
+        <section className="space-y-2" key={name}>
           <p className="font-medium text-gray-700">Example:</p>
           <CodeBlock
             code={example}
